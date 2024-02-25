@@ -12,7 +12,41 @@
 \usepackage{enumitem}
 \newcommand{\degsym}{^{\circ}}
 \newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
 \newcommand{\lb}{\\[8pt]}
+\newenvironment*{cell}[1][]{\begin{tabular}[c]{@{}c@{}}}{\end{tabular}}
+\newcommand{\img}[3]{\begin{center}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=#2\textwidth]{#1}
+    \caption{#3}
+    \label{fig:fig1}
+  \end{figure}
+\end{center}}
+\newcommand{\doubleimg}[4]{\begin{center}
+  \begin{figure}[H]
+    \centering
+    \begin{subfigure}{.45\textwidth}
+      \centering
+      \includegraphics[width=1\linewidth]{#1}
+      \caption{#2}
+      \label{fig:sub1}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+      \centering
+      \includegraphics[width=1\linewidth]{#3}
+      \caption{#4}
+      \label{fig:sub2}
+    \end{subfigure}
+  \end{figure}
+\end{center}}
 \newenvironment*{cell}[1][]{\begin{tabular}[c]{@{}c@{}}}{\end{tabular}}
 \newcommand{\img}[2]{\begin{center}
   \begin{figure}[H]
