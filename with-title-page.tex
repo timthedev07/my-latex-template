@@ -1,12 +1,16 @@
 \documentclass[11pt]{article}
 
-\usepackage{sectsty}
+usepackage{sectsty}
 \usepackage{siunitx}
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{float}
+\usepackage{outlines}
 \usepackage{amssymb}
+\usepackage{outlines}
+\usepackage{caption}
+\usepackage{subcaption}
 \let\oldsi\si
 \renewcommand{\si}[1]{\oldsi[per-mode=reciprocal-positive-first]{#1}}
 \usepackage{enumitem}
@@ -47,25 +51,20 @@
     \end{subfigure}
   \end{figure}
 \end{center}}
-\newenvironment*{cell}[1][]{\begin{tabular}[c]{@{}c@{}}}{\end{tabular}}
-\newcommand{\img}[2]{\begin{center}
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=#2\textwidth]{#1}
-    \caption{Labeled diagram}
-    \label{fig:fig1}
-  \end{figure}
-\end{center}}
 
-\title{Title}
-\author{Tim}
-\date{month day, year}
+
+
+\title{Math AA HL at KCA - Chapter 9 Notes}
+\author{Tim Bao 2023-2025}
+\date{February 26, 2024}
 
 \begin{document}
 
 \maketitle
 \pagebreak
+\tableofcontents
+\pagebreak
 
-\section{Introduction}
+
 
 \end{document}
