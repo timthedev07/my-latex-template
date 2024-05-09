@@ -1,37 +1,55 @@
-\documentclass[11pt]{article}
-
+\documentclass[a4paper,12pt]{article}
+\usepackage{setspace}
+\doublespacing
+\usepackage[backend=biber,style=apa]{biblatex}
+\addbibresource{References.bib}
 \usepackage{sectsty}
 \usepackage{siunitx}
 \usepackage{graphicx}
+\usepackage[a4paper, total={3in, 9in}, textwidth=16cm,bottom=1in,top=1.4in]{geometry}
+\usepackage{xcolor}
 \usepackage{amsmath}
+\usepackage{esvect}
 \usepackage{amsthm}
+\usepackage{hyperref}
 \usepackage{float}
-\usepackage{outlines}
 \usepackage{amssymb}
 \usepackage{outlines}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{esdiff}
+\usepackage{setspace}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\doublespacing
+\newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
 \let\oldsi\si
 \renewcommand{\si}[1]{\oldsi[per-mode=reciprocal-positive-first]{#1}}
 \usepackage{enumitem}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
 \newcommand{\degsym}{^{\circ}}
 \newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
 \usepackage{hyperref}
 \hypersetup{
-    colorlinks,
-    citecolor=black,
-    filecolor=black,
-    linkcolor=black,
-    urlcolor=black
+  colorlinks,
+  citecolor=black,
+  filecolor=black,
+  linkcolor=black,
+  urlcolor=black
 }
 \newcommand{\lb}{\\[8pt]}
 \newenvironment*{cell}[1][]{\begin{tabular}[c]{@{}c@{}}}{\end{tabular}}
-\newcommand{\img}[3]{\begin{center}
+\newcommand{\img}[4]{\begin{center}
   \begin{figure}[H]
     \centering
     \includegraphics[width=#2\textwidth]{#1}
     \caption{#3}
-    \label{fig:fig1}
+    \label{fig:#4}
   \end{figure}
 \end{center}}
 \newcommand{\doubleimg}[4]{\begin{center}
@@ -51,20 +69,60 @@
     \end{subfigure}
   \end{figure}
 \end{center}}
-
-
-
-\title{Math AA HL at KCA - Chapter 9 Notes}
-\author{Tim Bao 2023-2025}
-\date{February 26, 2024}
+\usepackage{fancyhdr}
+\fancyfoot{}
+\newcommand{\vect}[3]{\begin{bmatrix}
+  #1 \\
+  #2 \\
+  #3
+\end{bmatrix}}
+\fancypagestyle{fancy}{\fancyfoot[R]{\vspace*{1.5\baselineskip}\thepage}}
+\renewcommand{\contentsname}{Table of Contents}
+\newcommand{\angled}[1]{\langle{#1}\rangle}
+\newcommand{\paren}[1]{\left(#1\right)}
+\newcommand{\sqb}[1]{\left[#1\right]}
+\newcommand{\coord}[3]{\angled{#1,\, #2,\, #3}}
+\newcommand{\pair}[2]{\paren{#1,\, #2}}
+\usepackage{cleveref}
+\crefname{lemma}{Lemma}{Lemmas}
+\crefname{proposition}{Proposition}{Propositions}
 
 \begin{document}
 
-\maketitle
+
+\pagenumbering{arabic}
+\pagestyle{fancy}
+
+
+\begin{titlepage}
+  \begin{center}
+    \vspace*{3cm}
+
+    \textbf{\Large  {Consider a Light Source Traveling on a Circular Path with Diameter OP and Angle $\theta$ with The Horizon, and a Cube Moving Between OP. What is the Rate of Change of the Cube's Shadow Area with Respect to Time?}}
+
+    \vspace{1cm}
+    \large{Mathematics Analysis and Approaches HL}\\
+    \large{Internal Assessment}
+
+
+    \vfill
+
+    \vspace{1.5cm}
+
+    Page count:
+
+  \end{center}
+\end{titlepage}
 \pagebreak
 \tableofcontents
 \pagebreak
 
+\clearpage
+\setcounter{page}{1}
+\addtocontents{toc}{\protect\thispagestyle{empty}}
 
+\pagebreak
+
+\printbibliography
 
 \end{document}
