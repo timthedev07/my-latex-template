@@ -1,27 +1,34 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage{setspace}
-\doublespacing
-\usepackage[backend=biber,style=apa]{biblatex}
-\addbibresource{References.bib}
 \usepackage{sectsty}
 \usepackage{siunitx}
 \usepackage{graphicx}
 \usepackage[a4paper, total={3in, 9in}, textwidth=16cm,bottom=1in,top=1.4in]{geometry}
-\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{amsmath}
 \usepackage{esvect}
+\usepackage{soul}
 \usepackage{amsthm}
 \usepackage{hyperref}
 \usepackage{float}
 \usepackage{amssymb}
 \usepackage{outlines}
 \usepackage{caption}
+\usepackage{fancyvrb}
 \usepackage{subcaption}
 \usepackage{esdiff}
 \usepackage{setspace}
+\usepackage{mathtools}
+\usepackage{tikz,pgfplots}
+\usetikzlibrary{positioning,decorations.markings,calc}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 \newtheorem{lemma}{Lemma}
 \newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newtheorem{observation}{Observation}
 \doublespacing
+\let\oldsection\subsection
+\renewcommand\subsection{\clearpage\oldsection}
 \newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
 \let\oldsi\si
 \renewcommand{\si}[1]{\oldsi[per-mode=reciprocal-positive-first]{#1}}
@@ -36,11 +43,8 @@
 \newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
 \usepackage{hyperref}
 \hypersetup{
-  colorlinks,
-  citecolor=black,
-  filecolor=black,
-  linkcolor=black,
-  urlcolor=black
+  colorlinks=true,
+  linkcolor = blue
 }
 \newcommand{\lb}{\\[8pt]}
 \newenvironment*{cell}[1][]{\begin{tabular}[c]{@{}c@{}}}{\end{tabular}}
@@ -52,6 +56,7 @@
     \label{fig:#4}
   \end{figure}
 \end{center}}
+\parindent=0pt
 \newcommand{\doubleimg}[4]{\begin{center}
   \begin{figure}[H]
     \centering
@@ -83,9 +88,20 @@
 \newcommand{\sqb}[1]{\left[#1\right]}
 \newcommand{\coord}[3]{\angled{#1,\, #2,\, #3}}
 \newcommand{\pair}[2]{\paren{#1,\, #2}}
-\usepackage{cleveref}
+\usepackage[
+  noabbrev,
+  capitalise,
+  nameinlink,
+]{cleveref}
 \crefname{lemma}{Lemma}{Lemmas}
 \crefname{proposition}{Proposition}{Propositions}
+\crefname{remark}{Remark}{Remarks}
+\crefname{observation}{Observation}{Observations}
+% tikz --- venn diagrams
+\colorlet{circle edge}{blue!50}
+\colorlet{circle area}{blue!20}
+\tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
+    outline/.style={draw=circle edge, thick}}
 
 \begin{document}
 
@@ -96,23 +112,14 @@
 
 \begin{titlepage}
   \begin{center}
-    \vspace*{3cm}
 
-    \textbf{\Large  {Consider a Light Source Traveling on a Circular Path with Diameter OP and Angle $\theta$ with The Horizon, and a Cube Moving Between OP. What is the Rate of Change of the Cube's Shadow Area with Respect to Time?}}
+    \vspace*{8cm}
+    \textbf{\Large {Title}}
 
-    \vspace{1cm}
-    \large{Mathematics Analysis and Approaches HL}\\
-    \large{Internal Assessment}
-
-
-    \vfill
-
-    \vspace{1.5cm}
-
-    Page count:
 
   \end{center}
 \end{titlepage}
+
 \pagebreak
 \tableofcontents
 \pagebreak
@@ -122,7 +129,5 @@
 \addtocontents{toc}{\protect\thispagestyle{empty}}
 
 \pagebreak
-
-\printbibliography
 
 \end{document}
